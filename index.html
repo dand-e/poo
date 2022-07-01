@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulador de Financiamento</title>
+  <style>
+    body{
+      background-color: bisque;
+      color: goldenrod;
+      font: 11pt Tahoma;
+      text-align: center;
+    }
+    button{
+      border-radius: 15px;
+      padding: 5px;
+      margin-top: 10px;
+      background-color: goldenrod;
+      color: bisque;
+      border: 1px solid sienna
+    }
+    input{
+      border-radius: 15px;
+      padding: 5px;
+      color: goldenrod;
+      background-color:lemonchiffon;
+      text-align: center;
+    }
+    select{
+      border-radius: 15px;
+      padding: 5px;
+      color: goldenrod;
+      background-color:lemonchiffon;
+      z-index: 10;
+    }
+    table, th, td{
+      margin: 0 auto;
+      border: goldenrod 1px solid;
+      border-collapse: collapse;
+      padding: 15px;
+    }
+    tr:nth-child(even){
+      background-color: lightslategray;
+    }
+    tr:nth-child(odd){
+      background-color: lemonchiffon;
+    }
+  </style>
+</head>
+<body>
+  <h2>Simulador de Financiamento com Sitema de Amortização Constante (SAC)</h2>
+  <label for="textoValor">Valor do Bem: </label><br/>
+  <input type="text" id="textoValor" placeholder="Valor do Bem"/><br/>
+  <label for="textoEntrada">Valor da Entrada: </label><br/>
+  <input type="text" id="textoEntrada" placeholder="Valor da Entrada"/><br/>
+  <label for="textoTaxaJuros">Taxa de Juros(%): </label><br/>
+  <input type="text" id="textoTaxaJuros" placeholder="Taxa de Juros (%)"/><br/>
+  <label for="textoPrazo">Prazo (em meses): </label><br/>
+  <input type="text" id="textoPrazo" placeholder="Prazo (em meses)"/><br/>
+  <button id="botaoCalcular">Calcular</button>
+  <input type="checkbox" name="" id="comCarencia">Com carência?
+  <select id="listaSuspensa" hidden>
+    <option value="2">2 meses</option>
+    <option value="3">3 meses</option>
+    <option value="4">4 meses</option>
+  </select>
+  <p></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Nº</th>
+        <th>Valor da Parcela</th>
+        <th>Amortização</th>
+        <th>Juros</th>
+        <th>Saldo devedor</th>
+      </tr>
+    </thead>
+    <tbody id="corpoTabela">
+    
+    </tbody>
+  </table>
+  <script defer type="module" src="index.js"></script>
+</body>
+</html>
